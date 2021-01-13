@@ -17,10 +17,6 @@ public class AbstractFactoryClient {
         publisher = new BetaPublisher(betaFactory);
         publisher.produce();
 
-        String osName = System.getProperty("os.name").toLowerCase(Locale.ROOT);
-
-        System.out.println(osName);
-
     }
 
 }
