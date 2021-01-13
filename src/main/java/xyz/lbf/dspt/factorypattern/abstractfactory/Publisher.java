@@ -18,7 +18,7 @@ public abstract class Publisher {
 
 
     /**
-     * 生成印刷品
+     * 制造印刷品
      */
     abstract void produce();
 

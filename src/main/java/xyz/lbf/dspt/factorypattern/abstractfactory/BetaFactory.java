@@ -10,16 +10,19 @@ public class BetaFactory implements BookFactory {
 
     @Override
     public Book createBook() {
-        return null;
+        System.out.println("BetaFactory生产的Python书籍");
+        return new PythonBook();
     }
 
     @Override
     public Newspaper createNewspaper() {
+        System.out.println("BetaFactory生产的报纸");
         return new BetaNewspaper();
     }
 
     @Override
     public Poster createPoster() {
+        System.out.println("BetaFactory生产的精装海报");
         return new BetaPoster();
     }
 
