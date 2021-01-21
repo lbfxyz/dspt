@@ -6,7 +6,7 @@ package xyz.lbf.dspt.singletonpattern;
  */
 public class LazyStyleSingleton {
 
-    private static LazyStyleSingleton instance;
+    private volatile static LazyStyleSingleton instance;
 
     private LazyStyleSingleton() {
 
@@ -14,7 +14,11 @@ public class LazyStyleSingleton {
 
     public static LazyStyleSingleton getInstance() {
         if (instance == null) {
-            instance = new LazyStyleSingleton();
+            synchronized (LazyStyleSingleton.class) {
+                if (instance == null) {
+                    instance = new LazyStyleSingleton();
+                }
+            }
         }
         return instance;
     }
