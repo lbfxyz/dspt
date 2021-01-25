@@ -6,7 +6,6 @@ package xyz.lbf.dspt.proxypattern.staticproxy;
  */
 public class HouseBuyerProxy implements Buyer{
 
-
     private final HouseBuyer houseBuyer;
 
     /**
