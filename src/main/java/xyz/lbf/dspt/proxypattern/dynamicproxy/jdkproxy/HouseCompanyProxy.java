@@ -22,7 +22,17 @@ public class HouseCompanyProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        return method.invoke(this.target, args);
+        before();
+        Object object = method.invoke(this.target, args);
+        after();
+        return object;
     }
 
+    private void before() {
+        System.out.println("before method ...");
+    }
+
+    private void after() {
+        System.out.println("after method ...");
+    }
 }

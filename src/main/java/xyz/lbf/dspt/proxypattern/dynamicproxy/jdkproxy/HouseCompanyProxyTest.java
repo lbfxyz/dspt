@@ -1,7 +1,10 @@
 package xyz.lbf.dspt.proxypattern.dynamicproxy.jdkproxy;
 
+import sun.misc.ProxyGenerator;
 import xyz.lbf.dspt.proxypattern.staticproxy.Buyer;
 import xyz.lbf.dspt.proxypattern.staticproxy.HouseBuyer;
+
+import java.io.*;
 
 /**
  * @author lbf
@@ -15,7 +18,13 @@ public class HouseCompanyProxyTest {
         Buyer buyer = (Buyer) new HouseCompanyProxy().getInstance(new HouseBuyer());
         buyer.buy();
 
-
+        try {
+            byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{Buyer.class});
+            FileOutputStream outputStream = new FileOutputStream("$Proxy0.class");
+            outputStream.write(bytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
