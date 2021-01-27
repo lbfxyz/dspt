@@ -20,7 +20,7 @@ public class HouseCompanyProxyTest {
 
         try {
             byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{Buyer.class});
-            FileOutputStream outputStream = new FileOutputStream("$Proxy0.class");
+            FileOutputStream outputStream = new FileOutputStream("external-file/$Proxy0.class");
             outputStream.write(bytes);
         } catch (Exception e) {
             e.printStackTrace();
