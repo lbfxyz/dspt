@@ -2,6 +2,7 @@ package xyz.lbf.dspt.delegate.simple;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * @author lbf
@@ -9,7 +10,7 @@ import java.util.Map;
  */
 public class Leader {
 
-    private Map<String, Employee> register = new HashMap<>();
+    private final Map<String, Employee> register = new HashMap<>();
 
     public Leader() {
         register.put("writing", new EmployeeW());
@@ -17,7 +18,6 @@ public class Leader {
     }
 
     public void doing(String command) {
-        register.get(command).working(command);
+        Optional.ofNullable(register.get(command)).orElseThrow(() -> new RuntimeException("命令不存在")).working(command);
     }
-
 }
