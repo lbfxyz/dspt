@@ -1,4 +1,4 @@
-package xyz.lbf.dspt.decorator;
+package xyz.lbf.dspt.decorator.simple;
 
 /**
  * @author lbf
@@ -9,5 +9,4 @@ public abstract class Pancakes {
     protected abstract String getDescription();
 
     protected abstract double cost();
-
 }

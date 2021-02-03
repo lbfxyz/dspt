@@ -1,4 +1,4 @@
-package xyz.lbf.dspt.decorator;
+package xyz.lbf.dspt.decorator.simple;
 
 /**
  * @author lbf

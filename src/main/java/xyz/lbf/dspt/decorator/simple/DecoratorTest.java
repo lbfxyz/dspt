@@ -1,4 +1,4 @@
-package xyz.lbf.dspt.decorator;
+package xyz.lbf.dspt.decorator.simple;
 
 /**
  * @author lbf
@@ -10,7 +10,6 @@ public class DecoratorTest {
         // 初始化一个什么都不加的煎饼
         Pancakes pancakes = new DefaultPancakes();
         pancakes = new EggDecorator(pancakes);
-        pancakes = new SausageDecorator(pancakes);
         pancakes = new SausageDecorator(pancakes);
 
         System.out.println(pancakes.getDescription() + " 价格：" + pancakes.cost());
